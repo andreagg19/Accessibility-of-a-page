@@ -9,73 +9,78 @@
 <body>
 
     <header>
-    <h1>Product Showcase - Lottie London</h1>
-    <nav>
-        <a href="#products">Products</a>
-        <a href="#specs">Specifications</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+        <h1>Product Showcase - Lottie London</h1>
+        <nav role="navigation" aria-label="Main Navigation">
+            <a href="#products">Products</a>
+            <a href="#specs">Specifications</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+
+        <div id="tabs" role="tablist" aria-label="Section Tabs">
+            <button role="tab" id="tab-products" aria-controls="panel-products" aria-selected="true">Products</button>
+            <button role="tab" id="tab-specs" aria-controls="panel-specs" aria-selected="false">Specifications</button>
+            <button role="tab" id="tab-contact" aria-controls="panel-contact" aria-selected="false">Contact Us</button>
+        </div>
     </header>
 
-    <section id="products">
-    <h2>Our Featured Products</h2>
-    <div class="product-gallery">
-        <div class="product">
-        <img src="https://lottielondon.mx/cdn/shop/products/LT065-SLB001-7_1040x.jpg?v=1660244897" alt="Lip Balm">
-        <h3>Overnight Lip Mask & Balm - Sweet Lips</h3>
-        <p>Amazing product that does wonders!</p>
-        <a href="https://us.lottielondon.com/products/sweet-lips?variant=42956688457979">Learn More</a>
+    <section id="panel-products" role="tabpanel" aria-labelledby="tab-products" tabindex="0">
+        <h2>Our Featured Products</h2>
+        <div class="product-gallery">
+            <div class="product">
+                <img src="https://lottielondon.mx/cdn/shop/products/LT065-SLB001-7_1040x.jpg?v=1660244897" alt="Lip Balm">
+                <h3>Overnight Lip Mask & Balm - Sweet Lips</h3>
+                <p>Amazing product that does wonders!</p>
+                <a href="https://us.lottielondon.com/products/sweet-lips?variant=42956688457979">Learn More</a>
+            </div>
+            <div class="product">
+                <img src="https://lottielondon.mx/cdn/shop/products/LT022-LGO003-4_1040x.jpg?v=1658963685" alt="Lip gloss">
+                <h3>100% Vegan Lip Gloss - Gloss'd</h3>
+                <p>This product will change your life!</p>
+                <a href="https://us.lottielondon.com/products/glossd?variant=42956718375163">Learn More</a>
+            </div>
         </div>
-        <div class="product">
-        <img src="https://lottielondon.mx/cdn/shop/products/LT022-LGO003-4_1040x.jpg?v=1658963685" alt="Lip gloss">
-        <h3>100% Vegan Lip Gloss - Gloss'd</h3>
-        <p>This product will change your life!</p>
-        <a href="https://us.lottielondon.com/products/glossd?variant=42956718375163">Learn More</a>
-        </div>
-    </div>
     </section>
 
-    <section id="specs">
-    <h2>Product Specifications</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Product</th>
-            <th>Weight</th>
-            <th>Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Overnight Lip Mask & Balm - Sweet Lips</td>
-            <td>9 gr.</td>
-            <td>$ 8.99</td>
-        </tr>
-        <tr>
-            <td>100% Vegan Lip Gloss - Gloss'd</td>
-            <td>8 ml.</td>
-            <td>$ 6.99</td>
-        </tr>
-        </tbody>
-    </table>
+    <section id="panel-specs" role="tabpanel" aria-labelledby="tab-specs" tabindex="0" hidden>
+        <h2>Product Specifications</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Weight</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Overnight Lip Mask & Balm - Sweet Lips</td>
+                    <td>9 gr.</td>
+                    <td>$ 8.99</td>
+                </tr>
+                <tr>
+                    <td>100% Vegan Lip Gloss - Gloss'd</td>
+                    <td>8 ml.</td>
+                    <td>$ 6.99</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
-    <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contactForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <section id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0" hidden>
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Submit</button>
-    </form>
-
-    <p id="formResponse"></p>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formResponse"></p>
     </section>
 
     <script src="script.js"></script>
