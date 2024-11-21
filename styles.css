@@ -93,3 +93,7 @@ button:hover {
     margin-top: 20px;
     color: green;
 }
+
+.tabs {
+    justify-content: center;
+}
