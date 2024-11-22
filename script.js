@@ -1,6 +1,26 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.querySelectorAll('#tabs [role="tab"]').forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Deselect all tabs
+        document.querySelectorAll('#tabs [role="tab"]').forEach(t => {
+            t.setAttribute('aria-selected', 'false');
+        });
 
+        // Hide all panels
+        document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+            panel.hidden = true;
+        });
+
+        // Select clicked tab
+        tab.setAttribute('aria-selected', 'true');
+
+        // Show associated panel
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        panel.hidden = false;
+    });
+});
+
+
+document.querySelector('.submit-button').addEventListener('click', () => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
@@ -12,20 +32,13 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         document.getElementById('formResponse').textContent = 'Please fill in all fields.';
     }
     });
+    // Logic for form submission or associated action
+    console.log('Form submitted!');
+//});
 
-
-    const tabs = document.querySelectorAll('[role="tab"]');
-const panels = document.querySelectorAll('[role="tabpanel"]');
-
-tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-    // Deselect all tabs
-    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-    panels.forEach(panel => panel.hidden = true);
-
-    // Select clicked tab and show the associated panel
-    tab.setAttribute('aria-selected', 'true');
-    const panelId = tab.getAttribute('aria-controls');
-    document.getElementById(panelId).hidden = false;
-    });
+document.querySelector('.submit-button').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); // Prevent scrolling with Space
+        event.target.click(); // Trigger the click event
+    }
 });
