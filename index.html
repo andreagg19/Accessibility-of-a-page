@@ -10,11 +10,11 @@
 
     <header>
         <h1>Product Showcase - Lottie London</h1>
-        <nav role="navigation" aria-label="Main Navigation">
+        <!-- <nav role="navigation" aria-label="Main Navigation">
             <a href="#products">Products</a>
             <a href="#specs">Specifications</a>
             <a href="#contact">Contact Us</a>
-        </nav>
+        </nav> -->
 
         <div id="tabs" role="tablist" aria-label="Section Tabs">
             <button role="tab" id="tab-products" aria-controls="panel-products" aria-selected="true">Products</button>
@@ -78,7 +78,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
 
-            <button type="submit">Submit</button>
+            <div role="button" tabindex="0" aria-label="Submit the contact form" class="submit-button">Submit</div>
         </form>
         <p id="formResponse"></p>
     </section>
