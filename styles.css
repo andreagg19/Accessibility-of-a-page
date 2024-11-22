@@ -88,12 +88,49 @@ button:hover {
     background-color: #f96dd3;
 }
 
+button:focus {
+    outline: 2px solid #003B7A;
+    outline-offset: 2px;
+}
+
 #formResponse {
     text-align: center;
     margin-top: 20px;
-    color: green;
+    color: #003B7A;
 }
 
 .tabs {
     justify-content: center;
+}
+
+/* Default styling for tabs */
+#tabs button[role="tab"] {
+    background-color: #f99de0;
+    border: 1px solid #f99de0;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Highlight active tab */
+#tabs button[role="tab"][aria-selected="true"] {
+    background-color: #f96dd3; /* Change this color to your preferred highlight color */
+    color: rgb(0, 0, 0);
+    border-color: #f96dd3;
+}
+
+.submit-button {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f99de0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:focus {
+    outline: 2px solid #f96dd3;
+    outline-offset: 2px;
 }
